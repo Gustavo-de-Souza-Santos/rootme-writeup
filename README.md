@@ -11,6 +11,11 @@ Upload de arquivos, enumeração web e privilege escalation
 - Dificuldade: Easy
 
 ## Metodologia
+1. Reconhecimento
+2. Enumeração
+3. Exploração
+4. Pós-exploração
+5. Escalonamento de Privilégios
 
 ### 1. Enumeração
 - O que eu fiz primeiro?
