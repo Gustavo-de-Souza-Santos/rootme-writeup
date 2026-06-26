@@ -69,7 +69,7 @@ Foi utilizado Python para spawn de um pseudo-terminal (pty.spawn('/bin/bash')), 
   
 Sim, Após obter acesso inicial ao sistema, foi realizada uma tentativa de escalonamento de privilégios utilizando Python. O interpretador Python foi usado para redefinir o UID do processo para 0 (root) e iniciar um shell interativo usando esse comando: python -c "import os; os.setuid(0); os.system('/bin/bash')"
 
-![privilegio](imagem/root (3).PNG)
+![privilegio](imagem/root3.PNG)
 
 ## Flags
 - Onde está a user flag e qual o seu valor?
@@ -83,7 +83,7 @@ Sim, Após obter acesso inicial ao sistema, foi realizada uma tentativa de escal
 
  Após a escalada de privilégios para root, a flag foi localizada no diretório /root.
 	THM{pr1v1l3g3_3sc4l4t10n}
-![flag](imagem/root (2).PNG)
+![flag](imagem/root2.PNG)
 
 
 
