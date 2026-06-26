@@ -17,12 +17,12 @@ Upload de arquivos, enumeração web e privilege escalation
 
 Bom primeiro eu fiz um nmap basico para ver o que esse ip:10.67.177.184 estava rodando.
 - Quais ferramentas utilizei?
-- 
+  
 Nmap
 
 - O que encontrei?
   
-Percebi que estava rodando ssh na porta 22 e http na porta 80
+![Percebi que estava rodando ssh na porta 22 e http na porta 80](imagens/nmap.png)
 
 
 
