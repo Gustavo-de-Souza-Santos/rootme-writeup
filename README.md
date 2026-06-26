@@ -22,7 +22,7 @@ Nmap
 
 - O que encontrei?
   
-![Scan do Nmap](imagem/namp.PNG)
+![Resultado do scan Nmap](imagem/namp.PNG)
 
 
 
@@ -35,21 +35,30 @@ Bom estou acostumado a usar o Gobuster para fazer força bruta em diretoris mas 
    
 Termina o Gobuster devolvendo 4 diretorios uploads, css, js, panel
 
- - Qual deles foi importante? 
+ - Qual deles foi importante?
+
+   ![Resultado do scan Nmap](imagem/gobuster.PNG)
 
 O diretorio Panel, porque da para fazer uploads de arquivo e o diretorio upladoas por que consegue acessar o upload que eu mesmo fiz.
+
+![Diretorio Panel](imagem/Rootme.PNG)
 
 ### 3. Exploração
 - Qual vulnerabilidade identifiquei?
   
 Upload irrestrito de arquivos(Unrestricted File Upload / Unrestricted File Upload Vulnerability)
 
+![Diretorio Panel](imagem/Rootme2.PNG)
+
 - Como cheguei nela?
   
 O formulário de upload permitia o envio de arquivos com a extensão .phtml. Como essa extensão era interpretada pelo servidor como PHP, foi possível fazer upload de um payload de shell reverso.
+
 - Quais comandos utilizei?
   
 Para conectar usei o nc -lvnp 4444 para escutar na porta 4444
+
+![nc](imagem/bash.PNG)
 
 ### 4. Pós-exploração
 - Como consegui mais informações?
@@ -60,16 +69,23 @@ Foi utilizado Python para spawn de um pseudo-terminal (pty.spawn('/bin/bash')), 
   
 Sim, Após obter acesso inicial ao sistema, foi realizada uma tentativa de escalonamento de privilégios utilizando Python. O interpretador Python foi usado para redefinir o UID do processo para 0 (root) e iniciar um shell interativo usando esse comando: python -c "import os; os.setuid(0); os.system('/bin/bash')"
 
+![nc](imagem/root (3).PNG)
+
 ## Flags
 - Onde está a user flag e qual o seu valor?
   
  A user flag foi encontrada no diretório /var/www/ após enumeração do sistema. 
 	THM{y0u_g0t_a_sh3ll}
 
+![nc](imagem/flagUser.PNG)
+
 -Onde está a root flag e qual o seu valor?
 
  Após a escalada de privilégios para root, a flag foi localizada no diretório /root.
 	THM{pr1v1l3g3_3sc4l4t10n}
+
+![nc](imagem/root (2).PNG)
+
 
 
 ## Ferramentas utilizadas
